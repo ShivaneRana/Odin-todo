@@ -11,5 +11,43 @@
 }
 
 body{
+    height: 100vh;
+    width: 100vw;
     font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainContainer{
+    width: 95%;
+    height: 95%;
+    border-radius: 25px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.sideBar,.mainBar{
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* below this styling for side bar */
+.sideBar{
+    justify-content: space-around;
+    height: 95%;
+    width: 15%;
+    background-color: lightgreen;
+}
+
+
+/* below this is styling for main bar */
+.mainBar{
+    width: 80%;
+    height: 95%;
+    background-color: lightblue;
 }
