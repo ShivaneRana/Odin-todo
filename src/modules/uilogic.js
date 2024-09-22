@@ -1,6 +1,7 @@
 import { expandButtonResult } from "./DOM.js";
 
-const expandTextChange = (function(){
+// to change expand button text
+export const expandTextChange = (function(){
     
     const buttonTextChange = function(expand,side,main){
         
@@ -17,5 +18,3 @@ const expandTextChange = (function(){
 
     return {buttonTextChange};
 })();
-
-export {expandTextChange}

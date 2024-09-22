@@ -1,3 +1,4 @@
+// for hiding and revealing sidebar
 export const expandButtonResult = (function(){
 
     const sideBarRemoved = function(side,main){
@@ -15,6 +16,7 @@ export const expandButtonResult = (function(){
     return {sideBarRemoved,sideBarAdded};
 })();
 
+// for changing theme
 export const themeChange = function(){
     document.documentElement.classList.toggle("dark");
 };
