@@ -164,8 +164,6 @@ body{
 
 .add{
     grid-column: 9/10;
-    background-color: var(--color-dark-primary);
-    color: var(--color-light-primary);
 
     &:hover{
         background-color: var(--color-light-primary);
