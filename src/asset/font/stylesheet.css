@@ -1,0 +1,56 @@
+:root{
+    --color-light-primary:#EDEEF0;
+    --color-light-secondary:#E1E3E6;
+    --color-light-tertiary:#B1B5B7;
+    --color-neutral:#5D5F64;
+    --color-dark-primary:#27292A;
+    --color-dark-secondary:#1C1D1F;
+    --color-dark-tertiary:#141415;
+}
+
+:root.dark{
+    --color-light-primary:#141415;
+    --color-light-secondary:#1C1D1F;
+    --color-light-tertiary:#27292A;
+    --color-neutral:#5D5F64;
+    --color-dark-primary:#EDEEF0;
+    --color-dark-secondary:#E1E3E6;
+    --color-dark-tertiary:#B1B5B7;
+}
+
+
+@font-face {
+    font-family: 'gilroyBold';
+    src: url('./gilroy-bold-webfont.woff2') format('woff2'),
+         url('./gilroy-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'gilroyHeavy';
+    src: url('./gilroy-heavy-webfont.woff2') format('woff2'),
+         url('./gilroy-heavy-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'gilroyLight';
+    src: url('./gilroy-light-webfont.woff2') format('woff2'),
+         url('./gilroy-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'gilroyRegular';
+    src: url('./gilroy-regular-webfont.woff2') format('woff2'),
+         url('./gilroy-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

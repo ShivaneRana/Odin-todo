@@ -1,6 +1,8 @@
+@import url(./asset/font/stylesheet.css);
+
 :root{
     scroll-behavior: smooth;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: gilroyRegular,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: all 0.75 ease;
 }
 
@@ -50,31 +52,56 @@ body{
     width: 100%;
 }
 
+/* all,today, Compelted button are inside this div */
 .top{
     height: 25%;
-    background-color: lightseagreen;
     justify-content: center;
+    gap: 5px;
 
     & > button{
-        width: 100%;
         height: 25%;
     }
 }
 
+/* this is a div that hold notes button */
 .middle{
     height: 10%;
-    background-color: lightsalmon;
     justify-content: center;
     
     & > button{
-        width: 100%;
         height: 70%;
     }
 }
 
 .bottom{
     height: 40%;
-    background-color: darkblue;
+    text-align: center;
+    gap: 5px;
+    & > h1{
+        font-family: gilroyBold,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+}
+
+/* this contains all the project as well as show all the projects */
+.bottomInner{
+    height: 90%;
+    & > button{
+        height: 20%;
+    }
+}
+
+/* applied to all the button */
+.but{
+    width: 100%;
+    font-size: 1rem;
+    outline: none;
+    border:none;
+    font-family: gilroyLight;
+    border-radius: 25px;
+
+    &:hover{
+        border-radius: 25px;
+    }
 }
 
 /* below this is styling for main bar */
