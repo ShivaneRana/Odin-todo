@@ -44,6 +44,38 @@ body{
     background-color: lightgreen;
 }
 
+.top,.bottom,.middle{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.top{
+    height: 25%;
+    background-color: lightseagreen;
+    justify-content: center;
+
+    & > button{
+        width: 100%;
+        height: 25%;
+    }
+}
+
+.middle{
+    height: 10%;
+    background-color: lightsalmon;
+    justify-content: center;
+    
+    & > button{
+        width: 100%;
+        height: 70%;
+    }
+}
+
+.bottom{
+    height: 40%;
+    background-color: darkblue;
+}
 
 /* below this is styling for main bar */
 .mainBar{
