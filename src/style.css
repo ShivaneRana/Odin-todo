@@ -19,37 +19,40 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: var(--background);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .mainContainer{
     width: 95%;
     height: 95%;
     border-radius: 25px;
-    background-color: red;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
-}
-
-.sideBar,.mainBar{
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
+    background-color: transparent;
+    backdrop-filter: blur(2px);
 }
 
 /* below this styling for side bar */
 .sideBar{
+    display: flex;
+    flex-direction: column;
     justify-content: space-around;
+    border-radius: 15px;
     height: 95%;
     width: 15%;
-    background-color: lightgreen;
+    outline: 1px solid var(--color-dark-primary);
 }
 
 .top,.bottom,.middle{
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 0px 10px 0px 10px;
 }
 
 /* all,today, Compelted button are inside this div */
@@ -69,7 +72,7 @@ body{
     justify-content: center;
     
     & > button{
-        height: 70%;
+        height: 65%;
     }
 }
 
@@ -90,17 +93,21 @@ body{
     }
 }
 
-/* applied to all the button */
+/* applied to all the button (all,today, completed,notes)*/
 .but{
     width: 100%;
     font-size: 1rem;
     outline: none;
     border:none;
     font-family: gilroyLight;
-    border-radius: 25px;
+    border-radius: 15px;
+    background-color: transparent;
+    transition: all 0.30s ease;
 
     &:hover{
-        border-radius: 25px;
+        border-radius: 15px;
+        background-color: var(--color-dark-primary);
+        color: var(--color-light-primary);
     }
 }
 
@@ -108,5 +115,67 @@ body{
 .mainBar{
     width: 80%;
     height: 95%;
-    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    gap: 5%;
 }
+
+.mainBarTop,.mainBarBottom{
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* constains expand, add and theme */
+.mainBarTop{
+    height: 10%;
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    justify-content: center;
+    align-items: center;
+    outline: 1px solid var(--color-dark-primary);
+}
+
+.expand,.add,.theme{
+    height: 60%;
+    margin: 10px;
+    font-size: 1rem;
+    font-family: gilroyLight,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-light-primary);
+    color: var(--color-dark-primary);
+    transition: all 0.30s ease;
+
+    &:hover{
+        background-color: var(--color-dark-primary);
+        color: var(--color-light-primary);
+    }
+}
+
+.expand{
+    grid-column: 1/2;
+}
+
+.add{
+    grid-column: 9/10;
+    background-color: var(--color-dark-primary);
+    color: var(--color-light-primary);
+
+    &:hover{
+        background-color: var(--color-light-primary);
+        color: var(--color-dark-primary);
+    }
+}
+
+.theme{
+    grid-column: 10/11;
+}
+
+/* this contains all the todo */
+.mainBarBottom{
+    height: 85%;
+    outline: 1px solid var(--color-dark-primary);
+    padding: 15px;
+}
+
