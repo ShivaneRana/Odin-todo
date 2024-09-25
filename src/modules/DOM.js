@@ -1,12 +1,14 @@
 // for hiding and revealing sidebar
 export const expandButtonResult = (function(){
 
+    // side and main are two main element
     const sideBarRemoved = function(side,main){
         side.classList.remove("sideBar");
         side.classList.add("hide");
         main.style.width = "95%";
     } 
 
+    // side and main are two main element
     const sideBarAdded = function(side,main){
         side.classList.remove("hide");
         side.classList.add("sideBar");
