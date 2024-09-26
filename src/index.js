@@ -12,6 +12,7 @@ const today = document.querySelector(".today");
 const completed = document.querySelector(".completed");
 const notes = document.querySelector(".notes");
 const addProjects = document.querySelector(".addProjects");
+const projectContainer = document.querySelector(".bottomInner");
 
 theme.addEventListener("click",() => {
     console.log("theme button was clicked");
