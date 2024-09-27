@@ -54,6 +54,7 @@ export const displayList = (function(){
         const xbutton = document.createElement("button");
         xbutton.textContent = "X";
         button.append(xbutton);
+    
 
         xbutton.addEventListener("click",() => {
             projectsList.splice(projectsList.findIndex(item => item === button.textContent.slice(0,-1)),1);
