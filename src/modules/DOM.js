@@ -20,6 +20,7 @@ export const expandButtonResult = (function(){
 
 // for changing theme
 export const themeChange = function(){
+    console.log("theme was changed");
     document.documentElement.classList.toggle("dark");
 };
 

@@ -63,7 +63,7 @@ body{
 .top{
     height: 25%;
     justify-content: center;
-    gap: 5px;
+    gap: 10px;
 
     & > button{
         height: 25%;
@@ -82,37 +82,64 @@ body{
 
 .bottom{
     height: 40%;
-    text-align: center;
-    gap: 5px;
-    & > h1{
-        font-family: gilroyBold,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: space-around;
+
+    & > button{
+        height: 16%;
     }
 }
 
 /* this contains all the project as well as show all the projects */
 .bottomInner{
-    height: 90%;
+    height: 80%;
+    width: 100%;
     overflow: scroll;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    gap: 10px;
+    padding-top: 10px;
+
     & > button{
-        height: 20%;
+        font-family: gilroyLight,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1rem;
+        width: 70%;
+        padding: 10px 5px 10px 5px;
+        border: none;
+        border-radius: 10px;
+        color: var(--color-dark-primary);
+        background-color: var(--color-light-primary);
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        transition: all 0.30s ease;
+        overflow-wrap: anywhere;
+
+        &:hover{
+            color: var(--color-light-primary);
+            background-color: var(--color-dark-primary);
+        }
+        
     }
 }
 
 /* applied to all the button (all,today, completed,notes)*/
 .but{
     width: 100%;
-    font-size: 1rem;
+    font-size: 1.2rem;
     outline: none;
     border:none;
     font-family: gilroyLight,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border-radius: 15px;
-    background-color: transparent;
+    border-radius: 5px;
+    background-color: var(--color-light-primary);
+    color: var(--color-dark-primary);
     transition: all 0.30s ease;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 
     &:hover{
-        border-radius: 15px;
-        background-color: var(--color-light-primary);
-        color: var(--color-dark-primary);
+        border-radius: 5px;
+        box-shadow: none;
+        background-color: var(--color-dark-primary);
+        color: var(--color-light-primary);
     }
 }
 
@@ -144,17 +171,21 @@ body{
 .expand,.add,.theme{
     height: 60%;
     margin: 10px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-family: gilroyLight,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border: none;
     border-radius: 5px;
     background-color: var(--color-light-primary);
-    color: var(--color-dark-primary);
+    color: var(--color-dark-primary); 
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     transition: all 0.30s ease;
+
 
     &:hover{
         background-color: var(--color-dark-primary);
         color: var(--color-light-primary);
+
     }
 }
 

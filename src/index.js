@@ -45,5 +45,5 @@ notes.addEventListener("click",() => {
 })
 
 addProjects.addEventListener("click",() => {
-    console.log("a project was added");
+    console.log("add project button clicked");
 })
