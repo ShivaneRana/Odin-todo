@@ -27,6 +27,7 @@ export const themeChange = function(){
 };
 
 
+// for displaying the project list
 export const displayList = (function(){
     
 

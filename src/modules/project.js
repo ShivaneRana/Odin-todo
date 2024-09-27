@@ -3,6 +3,7 @@ import { displayList } from "./DOM.js";
 
 export const projectsList = [];
 
+// create new projects and store them in projectList
 const createNewProject = (function(){
 
     const askProjectName = function(){
