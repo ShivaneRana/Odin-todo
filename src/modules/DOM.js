@@ -50,6 +50,7 @@ export const displayList = (function(){
     });
     }
 
+    // create close button for every new project
     const addCloseButton = function(button,container){
         const xbutton = document.createElement("button");
         xbutton.textContent = "X";
