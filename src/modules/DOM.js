@@ -28,21 +28,38 @@ export const themeChange = function(){
 
 
 export const displayList = (function(){
-    const display = function(container){
+    
 
+    const display = function(container){
         if(projectsList.length === 0){
             console.log("Nothing to display the list is empty");
         }else{
-            container.textContent = "";
-            projectsList.forEach((item,index) => {
-               const button = document.createElement("button");
-               const xbutton = document.createElement("button");
-               xbutton.textContent = "X";
-               button.textContent = `${index+1}. ${item}`;
-               button.append(xbutton);
-               container.append(button);
-            })
+            rerender(container);
+            }
         }
+
+    // display items in projectList array
+    const rerender = function(container){
+        container.textContent = "";
+        console.log(projectsList);
+        projectsList.forEach((item,index) => {
+           const button = document.createElement("button");
+           button.textContent = `${item}`;
+           addCloseButton(button,container);
+           container.append(button);
+    });
+    }
+
+    const addCloseButton = function(button,container){
+        const xbutton = document.createElement("button");
+        xbutton.textContent = "X";
+        button.append(xbutton);
+
+        xbutton.addEventListener("click",() => {
+            projectsList.splice(projectsList.findIndex(item => item === button.textContent.slice(0,-1)),1);
+            rerender(container);
+            console.log("close button was clicked");
+        })
     }
 
     return {display};
