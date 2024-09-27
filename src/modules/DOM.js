@@ -1,3 +1,5 @@
+import { projectsList } from "./project";
+
 // for hiding and revealing sidebar
 export const expandButtonResult = (function(){
 
@@ -24,3 +26,24 @@ export const themeChange = function(){
     document.documentElement.classList.toggle("dark");
 };
 
+
+export const displayList = (function(){
+    const display = function(container){
+
+        if(projectsList.length === 0){
+            console.log("Nothing to display the list is empty");
+        }else{
+            container.textContent = "";
+            projectsList.forEach((item,index) => {
+               const button = document.createElement("button");
+               const xbutton = document.createElement("button");
+               xbutton.textContent = "X";
+               button.textContent = `${index+1}. ${item}`;
+               button.append(xbutton);
+               container.append(button);
+            })
+        }
+    }
+
+    return {display};
+})();

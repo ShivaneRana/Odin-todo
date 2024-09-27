@@ -1,6 +1,7 @@
 import "./style.css";
-import { expandTextChange } from "./modules/uilogic";
-import { themeChange } from "./modules/DOM";
+import { expandTextChange } from "./modules/uilogic.js";
+import { themeChange, displayList} from "./modules/DOM.js";
+import { createNewProject } from "./modules/project.js";
 
 const add = document.querySelector(".add");
 const theme = document.querySelector(".theme");
@@ -45,5 +46,7 @@ notes.addEventListener("click",() => {
 })
 
 addProjects.addEventListener("click",() => {
+    createNewProject.askProjectName(projectContainer);
+    displayList.display(projectContainer);
     console.log("add project button clicked");
 })
