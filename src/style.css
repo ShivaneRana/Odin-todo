@@ -135,10 +135,13 @@ body{
         }
 
         &:hover{
-            color: var(--color-light-primary);
-            background-color: var(--color-dark-primary);
+            background-color: var(--color-light-tertiary);
+        }        
+
+        &:active{
+            box-shadow: none;
+            background-color: var(--color-light-secondary);
         }
-        
     }
 }
 
@@ -158,9 +161,12 @@ body{
 
     &:hover{
         border-radius: 5px;
+        background-color: var(--color-light-tertiary);
+    }
+
+    &:active{
         box-shadow: none;
-        background-color: var(--color-dark-primary);
-        color: var(--color-light-primary);
+        background-color: var(--color-light-secondary);
     }
 }
 
@@ -204,9 +210,12 @@ body{
 
 
     &:hover{
-        background-color: var(--color-dark-primary);
-        color: var(--color-light-primary);
+        background-color: var(--color-light-tertiary);
+    }
 
+    &:active{
+        box-shadow: none;
+        background-color: var(--color-light-secondary);
     }
 }
 
