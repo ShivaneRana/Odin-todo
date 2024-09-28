@@ -1,6 +1,6 @@
 import "./style.css";
 import { expandTextChange} from "./modules/uilogic.js";
-import { themeChange, displayList, dialogDriver} from "./modules/DOM.js";
+import { themeChange, displayList} from "./modules/DOM.js";
 import { createNewProject} from "./modules/project.js";
 
 
@@ -15,7 +15,6 @@ const completed = document.querySelector(".completed");
 const notes = document.querySelector(".notes");
 const addProjects = document.querySelector(".addProjects");
 const projectContainer = document.querySelector(".bottomInner");
-const dialog = document.createElement("dialog");
 
 theme.addEventListener("click",() => {
     themeChange();
@@ -38,6 +37,8 @@ completed.addEventListener("click",() => {
 })
 
 notes.addEventListener("click",() => {
+
+    displayNotes.goThroughNotes();
 })
 
 addProjects.addEventListener("click",() => {
@@ -61,7 +62,3 @@ document.addEventListener("keydown",function(event){
         theme.click();
     }
 })
-
-dialogDriver.clearDialogBox(dialog);
-dialogDriver.createDialogBox(dialog);
-dialogDriver.displayDialogBox(dialog);

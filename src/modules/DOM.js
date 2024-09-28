@@ -1,4 +1,4 @@
-import { projectsList } from "./project";
+import { projectsList } from "./project"; //this is where all the projects are stored;
 
 // for hiding and revealing sidebar
 export const expandButtonResult = (function(){
@@ -72,59 +72,22 @@ export const displayList = (function(){
 })();
 
 
-// responsible for creating,clearing, displaying of dialog box
-export const dialogDriver = (function(){
+export const displayNotes = function(){
 
-    const notesWrapper = function(){
-        const div = document.createElement("div");
-        return div;
-    }
-
-    const todoWrapper = function(){
-        const div = document.createElement("div");
-        return div;
-    }
-
-    const createUpperWrapper = function(){
-        const div = document.createElement("div");
-        const select = document.createElement("select");
-        const option1 = document.createElement("option");
-        const option2 = document.createElement("option");
-        const close = document.createElement("button");
-        close.textContent = "X";
-        option1.textContent = "Notes";
-        option2.textContent = "Todo"
-        select.append(option1,option2);
-        div.append(select)
-        div.append(close)
-        return div;
-    }
-
-    const createDialogBox = function(dialog){
-        const wrapper = document.createElement("div");
-        wrapper.classList.add("wrapper")
-        wrapper.append(createUpperWrapper());
-        wrapper.append(createLowerWrapper());
-
-        dialog.append(wrapper);
-        dialog.classList.add("dialogBox");
-        document.body.append(dialog);
-
-        dialog.addEventListener("click",function(e){
-            if(!wrapper.contains(e.target)){
-                dialog.close();
-            }
+    const renderList = function(arr){
+        arr.forEach((item,index) => {
+            const div = document.createElement("div");
+            const button = document.createElement("button");
+            const heading = document.createElement("h1");
+            const paragraph = document.createElement("p");
+            heading.textContent = item.title;
+            paragraph.textContent = item.description;
+            button.textContent = "Delete";
+            div.append(heading,paragraph,button);
         })
     }
-   
-    const clearDialogBox = function(dialog){
-        dialog.textContent = "";
-    }
 
-    const displayDialogBox = function(dialog){
-        dialog.showModal();
-    }
 
-    return {createDialogBox, clearDialogBox, displayDialogBox}
-})();
 
+    return {renderList}
+}

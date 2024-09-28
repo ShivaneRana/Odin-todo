@@ -17,5 +17,3 @@ export const expandTextChange = (function(){
     }
     return {buttonTextChange};
 })();
-
-

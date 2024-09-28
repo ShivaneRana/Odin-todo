@@ -240,43 +240,12 @@ body{
     overflow: scroll;
 }
 
-.dialogBox{
-    position: relative;
-    margin: auto;
-    border: none;
-    width: 30vw;
-    height: 70vh;
-    background-color: red;
+/* this is for when the mainBarBottom displays todos */
+.todoContainer{
 
-    &:focus{
-        border: none;
-        outline: none;
-    }
-
-    &::backdrop{
-        background-color: transparent;
-        backdrop-filter: blur(10px);
-    }
 }
 
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    background-color: green;
-
-    & > div:first-child{
-        width: 100%;
-        height: 20%;
-        background-color: darkblue;
-    }
-
-    & > div:last-child{
-        width: 100%;
-        height: 80%;
-        background-color: yellow;
-    }
+/* this does the same but for notes */
+.notesContainer{
+    
 }
