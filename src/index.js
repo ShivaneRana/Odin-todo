@@ -1,7 +1,8 @@
 import "./style.css";
-import { expandTextChange } from "./modules/uilogic.js";
-import { themeChange, displayList} from "./modules/DOM.js";
+import { expandTextChange} from "./modules/uilogic.js";
+import { themeChange, displayList, dialogDriver} from "./modules/DOM.js";
 import { createNewProject} from "./modules/project.js";
+
 
 const add = document.querySelector(".add");
 const theme = document.querySelector(".theme");
@@ -14,43 +15,38 @@ const completed = document.querySelector(".completed");
 const notes = document.querySelector(".notes");
 const addProjects = document.querySelector(".addProjects");
 const projectContainer = document.querySelector(".bottomInner");
+const dialog = document.createElement("dialog");
 
 theme.addEventListener("click",() => {
-    console.log("theme button was clicked");
     themeChange();
 })
 
 expand.addEventListener("click",() => {
-    console.log("expand button was clicked");
     expandTextChange.buttonTextChange(expand,sideBar,mainBar);
 })
 
 add.addEventListener("click",() => {
-    console.log("Add button was clicked");
 });
 
 all.addEventListener("click",() => {
-    console.log("All button was clicked");
 })
 
 today.addEventListener("click",() => {
-    console.log("All button was clicked");
 })
 
 completed.addEventListener("click",() => {
-    console.log("All button was clicked");
 })
 
 notes.addEventListener("click",() => {
-    console.log("notes button was clicked");
 })
 
 addProjects.addEventListener("click",() => {
     createNewProject.askProjectName(projectContainer);
     displayList.display(projectContainer);
-    console.log("add project button clicked");
 })
 
+
+// keyboard support Uwu~
 document.addEventListener("keydown",function(event){
     const target = event.key;
     if(target === "p"){
@@ -65,3 +61,7 @@ document.addEventListener("keydown",function(event){
         theme.click();
     }
 })
+
+dialogDriver.clearDialogBox(dialog);
+dialogDriver.createDialogBox(dialog);
+dialogDriver.displayDialogBox(dialog);

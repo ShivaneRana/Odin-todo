@@ -1,4 +1,4 @@
-import { expandButtonResult } from "./DOM.js";
+import { expandButtonResult, dialogDriver} from "./DOM.js";
 
 // to change expand button text
 export const expandTextChange = (function(){
@@ -17,3 +17,5 @@ export const expandTextChange = (function(){
     }
     return {buttonTextChange};
 })();
+
+

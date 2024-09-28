@@ -43,7 +43,8 @@ export const displayList = (function(){
     const rerender = function(container){
         container.textContent = "";
         console.log(projectsList);
-        projectsList.forEach((item,index) => {
+        projectsList.forEach((item) => {
+            // no styling applied to button cuz already done in style.css   
            const button = document.createElement("button");
            button.textContent = `${item}`;
            addCloseButton(button,container);
@@ -52,6 +53,8 @@ export const displayList = (function(){
     }
 
     // create close button for every new project
+    // button parameter added to find which project to remove
+    // remove from container which is the div containing all projects Name
     const addCloseButton = function(button,container){
         const xbutton = document.createElement("button");
         xbutton.textContent = "X";
@@ -67,3 +70,61 @@ export const displayList = (function(){
 
     return {display};
 })();
+
+
+// responsible for creating,clearing, displaying of dialog box
+export const dialogDriver = (function(){
+
+    const notesWrapper = function(){
+        const div = document.createElement("div");
+        return div;
+    }
+
+    const todoWrapper = function(){
+        const div = document.createElement("div");
+        return div;
+    }
+
+    const createUpperWrapper = function(){
+        const div = document.createElement("div");
+        const select = document.createElement("select");
+        const option1 = document.createElement("option");
+        const option2 = document.createElement("option");
+        const close = document.createElement("button");
+        close.textContent = "X";
+        option1.textContent = "Notes";
+        option2.textContent = "Todo"
+        select.append(option1,option2);
+        div.append(select)
+        div.append(close)
+        return div;
+    }
+
+    const createDialogBox = function(dialog){
+        const wrapper = document.createElement("div");
+        wrapper.classList.add("wrapper")
+        wrapper.append(createUpperWrapper());
+        wrapper.append(createLowerWrapper());
+
+        dialog.append(wrapper);
+        dialog.classList.add("dialogBox");
+        document.body.append(dialog);
+
+        dialog.addEventListener("click",function(e){
+            if(!wrapper.contains(e.target)){
+                dialog.close();
+            }
+        })
+    }
+   
+    const clearDialogBox = function(dialog){
+        dialog.textContent = "";
+    }
+
+    const displayDialogBox = function(dialog){
+        dialog.showModal();
+    }
+
+    return {createDialogBox, clearDialogBox, displayDialogBox}
+})();
+
