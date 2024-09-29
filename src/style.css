@@ -247,5 +247,18 @@ body{
 
 /* this does the same but for notes */
 .notesContainer{
-    
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit,350px);
+    grid-template-rows: repeat(2,1fr);
+    gap: 10px;
+
+    & > div{
+        background-color: red;
+        outline: 1px solid;
+        width: 350px;
+        height: 350px;
+        border: none;
+        border-radius: 10px;
+    }
 }

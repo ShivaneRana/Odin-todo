@@ -74,7 +74,7 @@ export const displayList = (function(){
 
 export const displayNotes = function(){
 
-    const renderList = function(arr){
+    const renderList = function(arr,container){
         arr.forEach((item,index) => {
             const div = document.createElement("div");
             const button = document.createElement("button");
@@ -84,6 +84,9 @@ export const displayNotes = function(){
             paragraph.textContent = item.description;
             button.textContent = "Delete";
             div.append(heading,paragraph,button);
+            container.classList.remove("todoContainer");
+            container.classList.add("noteContainer");
+            container.append()
         })
     }
 
