@@ -73,8 +73,8 @@ export const displayList = (function(){
 })();
 
 
+// to diaplay all the notes
 export const displayNotes = (function(){
-
     // constainer being the div that hold all the notes or todos in this case
     const renderList = function(container){
         container.classList.remove("todoContainer");
