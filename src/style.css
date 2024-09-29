@@ -254,11 +254,42 @@ body{
     gap: 10px;
 
     & > div{
-        background-color: red;
+        background-color: var(--color-light-primary);
         outline: 1px solid;
         width: 350px;
         height: 350px;
         border: none;
         border-radius: 10px;
+        padding: 20px;
+        display: grid;
+        grid-template-rows: 1fr 5fr 1fr;
+        transition: all 0.30s ease;
+
+        & > h1{
+            font-family: gilroyBold;
+            color: var(--color-dark-primary);
+        }
+
+        & > p{
+            color: var(--color-dark-primary);
+        }
+
+        & > button{
+            border: none;
+            font-family: gilroyLight,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1rem;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: var(--color-dark-primary);
+            color: var(--color-light-primary);
+        }
+
+        &:hover{
+            background-color: var(--color-light-secondary);
+        }
+
+        &:active{
+            background-color: var(--color-light-tertiary);
+        }
     }
 }

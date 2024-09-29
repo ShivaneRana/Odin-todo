@@ -1,6 +1,6 @@
 import "./style.css";
 import { expandTextChange} from "./modules/uilogic.js";
-import { themeChange, displayList} from "./modules/DOM.js";
+import { themeChange, displayList , displayNotes} from "./modules/DOM.js";
 import { createNewProject} from "./modules/project.js";
 
 
@@ -15,6 +15,7 @@ const completed = document.querySelector(".completed");
 const notes = document.querySelector(".notes");
 const addProjects = document.querySelector(".addProjects");
 const projectContainer = document.querySelector(".bottomInner");
+const displayContainer = document.querySelector(".mainBarBottom");
 
 theme.addEventListener("click",() => {
     themeChange();
@@ -37,9 +38,11 @@ completed.addEventListener("click",() => {
 })
 
 notes.addEventListener("click",() => {
-
-    displayNotes.goThroughNotes();
 })
+
+
+displayContainer.textContent = "";
+displayNotes.renderList(displayContainer);
 
 addProjects.addEventListener("click",() => {
     createNewProject.askProjectName(projectContainer);

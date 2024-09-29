@@ -1,4 +1,5 @@
 import { projectsList } from "./project"; //this is where all the projects are stored;
+import { notesList } from "./notes.js";
 
 // for hiding and revealing sidebar
 export const expandButtonResult = (function(){
@@ -72,10 +73,14 @@ export const displayList = (function(){
 })();
 
 
-export const displayNotes = function(){
+export const displayNotes = (function(){
 
-    const renderList = function(arr,container){
-        arr.forEach((item,index) => {
+    // constainer being the div that hold all the notes or todos in this case
+    const renderList = function(container){
+        container.classList.remove("todoContainer");
+        container.classList.add("notesContainer");
+        notesList.forEach((item,index) => {
+                
             const div = document.createElement("div");
             const button = document.createElement("button");
             const heading = document.createElement("h1");
@@ -84,13 +89,22 @@ export const displayNotes = function(){
             paragraph.textContent = item.description;
             button.textContent = "Delete";
             div.append(heading,paragraph,button);
-            container.classList.remove("todoContainer");
-            container.classList.add("noteContainer");
-            container.append()
+            container.append(div);
+
+            // to delete element from note list and render the notes again
+            button.addEventListener("click",() => {
+                deleteItemFromList(index);
+                container.textContent = "";
+                renderList(container);
+            })
         })
     }
 
-
+    const deleteItemFromList = function(index){
+        notesList.splice(index,1);
+        console.log("An element from the noteList has been removed");
+        console.log(notesList)
+    }
 
     return {renderList}
-}
+})();
