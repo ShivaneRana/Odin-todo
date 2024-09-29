@@ -35,14 +35,14 @@ today.addEventListener("click",() => {
 })
 
 completed.addEventListener("click",() => {
+    displayContainer.textContent = "";
 })
 
 notes.addEventListener("click",() => {
+    displayContainer.textContent = "";
+    displayNotes.renderList(displayContainer);
 })
 
-
-displayContainer.textContent = "";
-displayNotes.renderList(displayContainer);
 
 addProjects.addEventListener("click",() => {
     createNewProject.askProjectName(projectContainer);
