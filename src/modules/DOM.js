@@ -108,3 +108,146 @@ export const displayNotes = (function(){
 
     return {renderList}
 })();
+
+// for add button
+
+// create Dialog box
+export const dialogBox = (function(){
+
+    const dialog = document.createElement("dialog");
+    dialog.classList.add("dialogDefault");
+    const wrapper = document.createElement("div");
+    const top = document.createElement("div");
+    top.classList.add("topWrapper");
+    const bottom = document.createElement("div");
+    bottom.classList.add("bottomWrapper");
+
+
+    // this only work to create top part of the dialog box
+    const createDialog = function(){
+        clearDialog();
+        const select = document.createElement("select");
+        const option1 = document.createElement("option");
+        const option2 = document.createElement("option");
+        const close = document.createElement("button");
+        close.textContent = "X";
+        option1.textContent = "Todo";
+        option2.textContent = "Notes";
+
+        // append to top div inside wrapper
+        select.append(option1,option2);
+        top.append(select,close);
+        wrapper.append(top);
+        todoDialog();
+
+        // append bottom to wrapper
+        wrapper.append(bottom);
+        dialog.append(wrapper);
+        document.body.append(dialog);
+        dialog.showModal();
+
+        select.addEventListener("input",() => {
+            if(select.value === "Notes"){
+                notesDialog();
+            }else{
+                todoDialog();
+            }
+        })
+
+        dialog.addEventListener("click",function(e){
+            if(!wrapper.contains(e.target)){
+                dialog.close();
+                clearDialog();
+            }
+        })
+
+        close.addEventListener("click",() => {
+            dialog.close();
+            clearDialog();
+        })
+    }
+
+    // what to do when you choose notes is select option
+    const notesDialog = function(){
+        bottom.classList.remove("todoDialog");
+        bottom.classList.add("notesDialog");
+        bottom.textContent = "";
+        const button = document.createElement("button");
+        const div = document.createElement("div");
+        const div1 = document.createElement("div");
+        const title = document.createElement("input");
+        const description = document.createElement("textarea");
+        const hd3 = document.createElement("h3");
+        const ht3 = document.createElement("h3");
+        button.textContent = "Confirm";
+        ht3.textContent = "Title";
+
+        // there are two div inside top wrapper
+        // one for each storing heading and select and button;
+        // div and div1
+
+        div.append(ht3,title);
+        hd3.textContent = "Description";
+        div1.append(hd3,description);
+        bottom.append(div);
+        bottom.append(div1);
+        bottom.append(button);
+
+
+        // confirm button
+        button.addEventListener("click",() => {
+            const obj = function(title,description){
+                if(title === ""){
+                    this.title = "No Title";
+                    this.description = "No description";
+                }else{
+                    this.title = title;
+                    this.description = description;    
+                }
+            }
+
+            const uwu = new obj(title.value,description.value);
+            notesList.unshift(uwu);
+            dialog.close();
+            clearDialog();
+        })
+    }
+
+    // what to do when you select todo in select option
+    const todoDialog = function(){
+
+        // remove any existing class add todo Class and clear any unecessary element in the bottom
+        bottom.classList.remove("notesDialog")
+        bottom.classList.add("todoDialog");
+        bottom.textContent = "";
+        const mainDiv = document.createElement("div");
+        const div1 = document.createElement("div");
+        const div2 = document.createElement("div");
+        const div3 = document.createElement("div");
+        const title = document.createElement("input");
+        const description = document.createElement("textarea");
+        const priority = document.createElement("select");
+        const option1 = document.createElement("option");
+        const option2 = document.createElement("option");
+        const option3 = document.createElement("option");
+        const option4 = document.createElement("option");
+        const button = document.createElement("button");
+        const date = document.createElement("input");
+
+        option1.textContent = "Low";
+        option2.textContent = "Medium";
+        option3.textContent = "High";
+        button.textContent = "Confirm";
+        bottom.textContent = "red";
+    }
+
+    const clearDialog = function(){
+        top.textContent = "";
+        bottom.textContent = "";
+        wrapper.textContent = "";
+        dialog.textContent = "";
+    }
+
+
+    return {createDialog};
+})();

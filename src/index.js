@@ -1,6 +1,6 @@
 import "./style.css";
 import { expandTextChange} from "./modules/uilogic.js";
-import { themeChange, displayList , displayNotes} from "./modules/DOM.js";
+import { themeChange, displayList , displayNotes, dialogBox} from "./modules/DOM.js";
 import { createNewProject} from "./modules/project.js";
 
 
@@ -26,12 +26,14 @@ expand.addEventListener("click",() => {
 })
 
 add.addEventListener("click",() => {
+    dialogBox.createDialog();
 });
 
 all.addEventListener("click",() => {
-})
+    displayContainer.textContent = ""});
 
 today.addEventListener("click",() => {
+    displayContainer.textContent = "";
 })
 
 completed.addEventListener("click",() => {
@@ -50,18 +52,26 @@ addProjects.addEventListener("click",() => {
 })
 
 
+dialogBox.createDialog();
+
+
 // keyboard support Uwu~
-document.addEventListener("keydown",function(event){
-    const target = event.key;
-    if(target === "p"){
-        addProjects.click();
-    }
+// document.addEventListener("keydown",function(event){
+//     const target = event.key;
+//     if(target === "p"){
+//         addProjects.click();
+//     }
 
-    if(target === "e"){
-        expand.click();
-    }
+//     if(target === "e"){
+//         expand.click();
+//     }
 
-    if(target === "t"){
-        theme.click();
-    }
-})
+//     if(target === "t"){
+//         theme.click();
+//     }
+
+//     if(target === "n"){
+//         notes.click();
+//     }
+// })
+

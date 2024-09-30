@@ -23,6 +23,7 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
 }
 
 .hide{
@@ -292,4 +293,120 @@ body{
             background-color: var(--color-light-tertiary);
         }
     }
+}
+
+.dialogDefault{
+    position: absolute;
+    margin: auto;
+    width: 25vw;
+    height: 70vh;
+    border: none;
+
+    &::backdrop{
+        background-color: transparent;
+        backdrop-filter: blur(10px);
+    }
+
+    & > div{
+        width: 100%;
+        height: 100%;
+    }
+
+    &:focus{
+        border: none;
+        outline: none;
+    }
+}
+
+/* for top  */
+.topWrapper{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 5% 20px 5%;
+
+    & > select{
+        font-size: 1.2rem;
+    }
+
+    & > button{
+        font-family: gilroyHeavy,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: 0px 10px 0px 10px;
+        font-size: 1.2rem;
+    }
+}
+
+/* for bottom which is dynamic */
+
+.bottomWrapper{
+    width: 100%;
+    height: 85%;
+}
+
+.notesDialog{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    & > div{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* title */
+    & > div:nth-child(1){
+        height: 20%;
+
+        & > input{
+            font-family: gilroyLight,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 100%;
+            height: 50%;
+            border: none;
+            padding: 10px;
+            outline: 1px solid;
+
+            &:focus{
+                outline: 1px solid;
+            }
+        }
+    }
+
+    /* description */
+    & > div:nth-child(2){
+        height: 60%;
+
+
+        & > textarea{
+            font-family: gilroyLight,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 100%;
+            height: 80%;
+            resize: none;
+            padding: 10px;
+            outline: 1px solid;
+            border: none;
+
+            &:focus{
+                outline: 1px solid;
+            }
+        }
+    }
+
+    /* confirm Button */
+    & > button{
+        font-family: gilroyLight,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: 5px;
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+}
+
+.todoDialog{
+    display: flex;
+    flex-direction: column;
+    background-color: red;
 }

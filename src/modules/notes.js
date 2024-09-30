@@ -1,32 +1,26 @@
 export const notesList = [
     {
-        title:"uwu1",
-        description:"this is a desicription",
+        title:"item1",
+        description:"des1",
     },
     {
-        title:"uwu2",
-        description:"this is a desicription",
+        title:"item2",
+        description:"des2",
     },
     {
-        title:"uwu3",
-        description:"this is a desicription",
+        title:"item3",
+        description:"des3",
     },
     {
-        title:"uwu4",
-        description:"this is a desicription",
+        title:"item4",
+        description:"des4",
     },
     {
-        title:"uwu5",
-        description:"this is a desicription",
+        title:"item5",
+        description:"des5",
     },
-    {
-        title:"uwu6",
-        description:"this is a desicription",
-    },
-    {
-        title:"uwu7",
-        description:"this is a desicription",
-    }
 ];
+
+
 
 
