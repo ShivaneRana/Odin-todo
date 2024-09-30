@@ -226,23 +226,48 @@ export const dialogBox = (function(){
         const div1 = document.createElement("div");
         const div2 = document.createElement("div");
         const div3 = document.createElement("div");
+        const divt = document.createElement("div");
+        const divdate = document.createElement("div");
+        const divdesc = document.createElement("div");
+        const divp = document.createElement("div");
+        const divl = document.createElement("div");
         const title = document.createElement("input");
-        const description = document.createElement("textarea");
         const priority = document.createElement("select");
         const option1 = document.createElement("option");
         const option2 = document.createElement("option");
         const option3 = document.createElement("option");
-        const option4 = document.createElement("option");
+        const location = document.createElement("select");
         const button = document.createElement("button");
         const date = document.createElement("input");
+        const plabel = document.createElement("h4");
+        const llabel = document.createElement("h4");
+        const tlabel = document.createElement("h4");
+        const datelabel = document.createElement("h4");
+        const desclabel = document.createElement("h4");
+        const desc = document.createElement("textarea");
+        date.setAttribute("type","date");
 
+        desclabel.textContent = "Description";
+        tlabel.textContent = "Title:";
+        datelabel.textContent = "Date:";
+        plabel.textContent = "Priority:";
+        llabel.textContent = "Location:";
         option1.textContent = "Low";
         option2.textContent = "Medium";
         option3.textContent = "High";
+        priority.append(option3);
+        location.append(option1,option2);
         button.textContent = "Confirm";
-        div1.textContent = "Div1";
-        div2.textContent = "Div2";
-        div3.textContent = "Div3";
+        divp.append(plabel,priority);
+        divl.append(llabel,location);
+        divt.append(tlabel,title);
+        divdate.append(datelabel,date);
+        divdesc.append(desclabel,desc);
+
+        div1.append(divt,divdate);
+        div2.append(divdesc);
+        div3.append(divp,divl);
+
 
         mainDiv.append(div1,div2,div3);
         bottom.append(mainDiv);
