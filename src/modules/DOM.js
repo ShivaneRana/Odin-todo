@@ -182,6 +182,8 @@ export const dialogBox = (function(){
         button.textContent = "Confirm";
         ht3.textContent = "Title";
 
+        
+
         // there are two div inside top wrapper
         // one for each storing heading and select and button;
         // div and div1
@@ -238,7 +240,13 @@ export const dialogBox = (function(){
         option2.textContent = "Medium";
         option3.textContent = "High";
         button.textContent = "Confirm";
-        bottom.textContent = "red";
+        div1.textContent = "Div1";
+        div2.textContent = "Div2";
+        div3.textContent = "Div3";
+
+        mainDiv.append(div1,div2,div3);
+        bottom.append(mainDiv);
+        bottom.append(button);
     }
 
     const clearDialog = function(){
