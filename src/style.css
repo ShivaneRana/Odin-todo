@@ -405,32 +405,102 @@ body{
     }
 }
 
+/* this is applied when the todo option is selected in dialog box */
 .todoDialog{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background-color: red;
 
     & > div{
-        height: 80%;
+        background-color: red;
+        height: 90%;
         width: 100%;
-        background-color: rebeccapurple;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
 
+        & > div{
+            width: 100%;
+        }
+
+        /* hold title and date */
         & > div:first-child{
+            background-color: lightseagreen;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
             height: 15%;
-            background-color: yellow;
+
+            /* div for title */
+            & > div:first-child{
+                background-color: yellow;
+                width: 60%;
+
+                & > input{
+                    width: 100%;
+                    padding: 5px;
+                }
+
+            }
+
+            /* div for date */
+            & > div:last-child{
+                background-color: palevioletred;
+                width: 30%;
+                & > input{
+                    padding: 5px;
+                    width: 100%;
+                }
+            }
         }
 
+        /* hold textArea */
         & > div:nth-child(2){
+            background-color: darkblue;
             height: 70%;
-            background-color: greenyellow;
+
+            & > div{
+                height: 100%;
+                width: 90%;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: space-around;
+                
+            }
+
+            & > div > textarea{
+                
+                width: 100%;
+                height: 80%;
+                resize: none;
+            }
+
+        }
+        
+
+        /* hold priority and location */
+        & > div:last-child{
+            background-color: lightblue;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 15%;
+
+            /* div for priority */
+            & > div:first-child{
+                background-color: lightsalmon;
+            }
+
+            /* div for location */
+            & > div:last-child{
+
+                background-color: lightgreen;
+            }
         }
 
-        & > div:last-child{
-            height: 15%;
-            background-color: darkblue;
-        }
     }
 
     /* confirm button */
